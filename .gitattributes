@@ -27,4 +27,8 @@ test/test_owners.csv merge=union
 # I'd imagine there are other use cases. 
 # See: https://editor.swagger.io/ for example
 api/openapi-spec/*.json linguist-generated=true
+# seems to be very useful with swagger I guess it has a lot of schema support for APIs? 
+# I'm not 100% sure I understand it the full extent but very useful for standarizing endpoints I'd imagine
+# Can help generate API endpoint and probably integrates with Swagger and other software.
+# https://spec.openapis.org/oas/v3.0.3#security-scheme-object
 staging/**/go.sum linguist-generated=true

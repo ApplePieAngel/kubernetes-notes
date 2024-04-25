@@ -1,5 +1,9 @@
 # See the OWNERS docs at https://go.k8s.io/owners
-
+# Above link explains it really well, 
+# Also reference: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Interestingly enough Chronium has it's only version as referenced in the links above. https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
+# Something I didn't know or forgot and is interesting is that you can make Codeowners applicable to only a specific section, like JS files only.
+# Can't really imagine any major OSS project without some form of this.
 filters:
   ".*":
     reviewers:
