@@ -2,12 +2,29 @@
 * text=auto eol=lf
 
 hack/verify-flags/known-flags.txt merge=union
-test/test_owners.csv merge=union
+# Interestingly not used due to a PR with hack/verify-lflags-underscore.py
+# Parses flags to check for underscores.
+# https://github.com/kubernetes/kubernetes/issues/40329
+# Well the hack is primarily scripts and I imagine this file is referenced or at least used to be referenced to error acceptable flags.
 
+test/test_owners.csv merge=union
+# In regards to merge union there's this interesting git thread https://github.com/isaacs/github/issues/487
+# It's been highly requested for the longest time.
+# Just to avoid dealing with merge conflicts for commonly edited files, like changelogs. 
 **/zz_generated.*.go linguist-generated=true
+# https://github.com/github-linguist/linguist
+# Basically filtering for PRs, like HTML or generated files
+# But also filtering for general.
+# Most interesting and valuable is that it's ignored in the git diff and if there's a lot of these I'd imagine that's very needed.
 **/types.generated.go linguist-generated=true
 **/generated.pb.go linguist-generated=true
 **/generated.proto
 **/types_swagger_doc_generated.go linguist-generated=true
+# Swagger is API documentation. I've seen this tool used in a number of other open source repos. 
+# I really really like it compared to traditional documentation.
+# It has the color and input/output. I think it's a really gerate public facing documentation.
+# Internal usage can reference it too. 
+# I'd imagine there are other use cases. 
+# See: https://editor.swagger.io/ for example
 api/openapi-spec/*.json linguist-generated=true
 staging/**/go.sum linguist-generated=true
