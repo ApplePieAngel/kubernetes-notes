@@ -98,3 +98,10 @@ The [Kubernetes Steering community repo](https://github.com/kubernetes/steering)
 ## Roadmap 
 
 The [Kubernetes Enhancements repo](https://github.com/kubernetes/enhancements) provides information about Kubernetes releases, as well as feature tracking and backlogs.
+
+# For organization sake from the Support.MD
+# TODO: Look into later.
+
+* [User Documentation](https://kubernetes.io/docs/)
+* [Troubleshooting Guide](https://kubernetes.io/docs/tasks/debug/)
+The [Kubernetes community repo](https://github.com/kubernetes/community) contains information about how to get started, how the community organizes, and more.

@@ -4,18 +4,37 @@
 // Run hack/pin-dependency.sh to change pinned dependency versions.
 // Run hack/update-vendor.sh to update go.mod files and the vendor directory.
 
+
+// Ignoring go.sum as it's primarily dupllicate / checksums
 module k8s.io/kubernetes
 
 go 1.22.0
+// As date of reading this, this is the most recent major version of Go.
 
 require (
 	bitbucket.org/bertimus9/systemstat v0.5.0
+	// Go package for system statistics, like CPU usage from the linux system, free/used memory/uptime, system load, etc.
+	// There's a whole thing with teletype terminals as well. See here for more: https://www.linusakesson.net/programming/tty/index.php
 	github.com/GoogleCloudPlatform/k8s-cloud-provider v1.18.1-0.20220218231025-f11817397a1b
+	// https://pkg.go.dev/github.com/GoogleCloudPlatform/k8s-cloud-provider
+	//  Support files for implementing the cloud provider for GCP. 
+	// This repo focuses on the Google Cloud specific portions of the cloud provider logic.
+	// Speaking of which https://garrettmills.dev/blog/2024/04/22/Mitigating-the-iconv-Vulnerability-for-PHP-CVE-2024-2961/
+	// This is also interesting regarding tty.
 	github.com/JeffAshton/win_pdh v0.0.0-20161109143554-76bb4ee9f0ab
+	// Windows performance data helper wrapper package for go.
 	github.com/Microsoft/go-winio v0.6.0
+	// Vista and recent applies to , allows Win32 IO operations in Go.
+	// I assume that implies that Go doesn't support Win32 IO operations natively. 
 	github.com/Microsoft/hcsshim v0.8.25
+	// Host comute service to launch and manage windows container, as well as other hghelper functions
+	// Responsibole for managing the communciation between Docker containers and windows supposedly.
+	// I wonder if this is a docker dependency. or if it's more than just that.
 	github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e
+
 	github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5
+	// SOCKS5 server (Secure Sockets) to route traffic between client and server through a proxy layer to bypass firewalls or NATs.
+	// Forward proxy basically
 	github.com/blang/semver/v4 v4.0.0
 	github.com/container-storage-interface/spec v1.8.0
 	github.com/containerd/cgroups v1.1.0
