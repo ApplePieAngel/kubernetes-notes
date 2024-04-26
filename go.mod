@@ -31,14 +31,37 @@ require (
 	// Responsibole for managing the communciation between Docker containers and windows supposedly.
 	// I wonder if this is a docker dependency. or if it's more than just that.
 	github.com/armon/circbuf v0.0.0-20150827004946-bbbad097214e
-
+	// Provides Go Bufferm, if I'm not mistaken this is native to NodeJS
 	github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5
 	// SOCKS5 server (Secure Sockets) to route traffic between client and server through a proxy layer to bypass firewalls or NATs.
 	// Forward proxy basically
 	github.com/blang/semver/v4 v4.0.0
+	// Semantic versioning
 	github.com/container-storage-interface/spec v1.8.0
+	// See: https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/
+	// https://kubernetes-csi.github.io/docs/
+	// Standard for exposing arbitary block and file systems to containerized workloads on 
+	// https://bluexp.netapp.com/blog/cvo-blg-kubernetes-csi-basics-of-csi-volumes-and-how-to-build-a-csi-driver
+	// It's basically a API specification for provisioning, attaching, mounting of volumes in containerzed workloads.
+	// https://www.simplyblock.io/post/how-the-csi-container-storage-interface-works
 	github.com/containerd/cgroups v1.1.0
+	// Creating, managing, inspecting and destroying cgroups
+	// Uses the OCI runtime spec. 
+	// cgroups (control groups) is a linux kernel that limits, 
+	// accounts for, and isolates the resource usage (CPU, memory disk I/O)
+	// of various processes
+	// Regarding OCI https://github.com/opencontainers/runtime-spec
+	// Open Container Initiative specifcations for standards on OS process and application containers.
 	github.com/coredns/corefile-migration v1.0.21
+	// CoreDNS https://coredns.io/
+	// DNS server used in a multitude of environments
+	// Reference: https://coredns.io/manual/toc/
+	// Basically includes 30 plugins in the native install with a bunch of external plugins.
+	// Including metrics, or cache, read data from a file or a database
+	// Plugins to communicate with Kubernetes to provide service discovery.
+	// Basically does all kind of things realy. 
+	// Corefiles: Picture of failing processes/ core dump/etc/created on runtime errors.
+	// This is for compatibility migrations for CoreDNS Corefiles to be combatible with CoreDNS
 	github.com/coreos/go-oidc v2.2.1+incompatible
 	github.com/coreos/go-systemd/v22 v22.5.0
 	github.com/cpuguy83/go-md2man/v2 v2.0.2
