@@ -63,30 +63,90 @@ require (
 	// Corefiles: Picture of failing processes/ core dump/etc/created on runtime errors.
 	// This is for compatibility migrations for CoreDNS Corefiles to be combatible with CoreDNS
 	github.com/coreos/go-oidc v2.2.1+incompatible
+	// Enables openID connect for oauth2
+	// https://openid.net/developers/how-connect-works/
+	// Authentication protocol, simplifies the way to verify identity of users.
 	github.com/coreos/go-systemd/v22 v22.5.0
+	// Go bindings to systemd socket activation, journal, D-Bus and unit files.
+	// Systemd, system and service manager for linux
+	// relevant packages, activation (socket) daemon (servic status changes) dbu, journal, sdjournal, login1, machine1, unit.
+	// In terms of linux.
+	// Sockets are used so two different processes can share data or for exchaning information between machines, FTP, real time network, secure shells etc.
+	// Systemd dumps everything that comes through the socket to STDIN nad makes sockets easy to setup.
+	// https://www.linux.com/training-tutorials/end-road-systemds-socket-units/
+	// 
 	github.com/cpuguy83/go-md2man/v2 v2.0.2
+	// Converts markdown into roff (man pages).
+	// Interestingly enoug h relatively small repo/low contributors.
 	github.com/cyphar/filepath-securejoin v0.2.4
+	// Secure join is supposed to be a secure alternative to filepath.Join.
+	// filepath.join joins any number of a specified path elements into a single path. 
 	github.com/distribution/reference v0.5.0
+	// Go library for handling references to container image helld in contaienr registries.
 	github.com/docker/go-units v0.5.0
+	// Parse and print size and time units in human readable formats. 
+	// Basically be able to pass in a "44KB"  as a string and being able to convert it to a equivalent in int or relevant type.
 	github.com/emicklei/go-restful/v3 v3.11.0
+	// Package for building REST-style web services.
 	github.com/evanphx/json-patch v4.12.0+incompatible
+	// Apply RFC6902 JSON patches against documents and calculate and apply RFC7396 JSON merge patches.
 	github.com/fsnotify/fsnotify v1.7.0
+	// Cross platform filesystem notifications on Windows/Linux macOS and BSD and illumos.
 	github.com/go-logr/logr v1.4.1
+	// Simple logging interface for go
 	github.com/godbus/dbus/v5 v5.1.0
+	// Native Go bindings for D-Bus
+	// D-Bus message bus system? 
+	// D-Bus is a message oriented middleware mechanism that allows communication between mtulipel processes running concurrently on the same machine
+	// Use case. Allows difference processes to communicate with each other in a distributed environment.
 	github.com/gogo/protobuf v1.3.2
+	// Depreciated 2 years ago, tons of people use this though
+	// Protcol buffers for go with gadgets.
+	// Protocol buffers are language neutral platform neutral extensible mechanisms for serializing structured data.
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
+	// Caching and cahce-filling library, intended as a replacement for memcached.
+	// Memcached is a memory object aching system, intended for speeding up dynamic web applications by alleviating database load.
+	// So basically it's redis for go.
+	// Saw someone refer to redis having a lot of language bindings, didn't really make the connection that's how you say that
+	// it has a lot of support for various languages.
+	// Interestingly, groupcache was originally created to serve blobs of binary files for Google's static file servers.
 	github.com/golang/protobuf v1.5.4
+	// Go bindings for protocol buffers.
 	github.com/google/cadvisor v0.49.0
+	// Analyzes resource usage and performance characteristics of running containers.
+	// It's a running daemon that collects, aggregates, processes, and exports information about running containers.
+	// A daemon is a problem that runs continuously as a background process and wakes up to handle periodic service requests
+	// from remote processes.
 	github.com/google/cel-go v0.20.1
+	// Common expressiong language, non turing complete language for simplificty, safety, and portability.
+	// C-like syntax that is nearly identical to equivalent expressions in C++,Go, JAva and Typescript.
 	github.com/google/gnostic-models v0.6.8
+	// Protcol Buffer models and associated libraries for working with API description formats supported by gnostic.
+	// Gnostic is a compiler for APIs described the OpenAPI specification.
 	github.com/google/go-cmp v0.6.0
+	// Package for comparing Go values in tests.
+	// A more powerful and safer alternative to reflect.Deepequal for compraring if two values are semantically equal.
 	github.com/google/gofuzz v1.2.0
+	// Fuzz testing for go, interestingly archived and is read only as of Jan 2024
+
 	github.com/google/uuid v1.3.1
+	// Go package for UUIDs
 	github.com/ishidawataru/sctp v0.0.0-20230406120618-7ff4192f6ff2
+	// SCTP library.
+	// Stream Control Transmission Protocol
+	// Computer networking communication protcol.
+	// Ensures reliable in sequence transport of data. Although this seems to be natively in Linux
+	// Definitely seems outdated even 10 years ago.
 	github.com/libopenstorage/openstorage v1.0.0
+	// A multi-host cllustered implementation of the open storage specification.
+	// API abstraction providing support for multiple public APIs. Including OpenStorage SDK, CSI and Docker Volume API.
+
 	github.com/lithammer/dedent v1.1.0
+	// Remove any common leading whitespace from multiline strings
 	github.com/moby/ipvs v1.1.0
+	// IPVS network for containers. Provides a native Go implementation for communicating with IPVS kernel module using a netlink socket.
 	github.com/mrunalp/fileutils v0.5.1
+	// Utils for file manipulation in golang
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
 	github.com/onsi/ginkgo/v2 v2.15.0
 	github.com/onsi/gomega v1.31.0
